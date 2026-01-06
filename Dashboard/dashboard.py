@@ -61,26 +61,40 @@ plt.tight_layout()
 st.pyplot(fig1)
 
 # ======================
-# DISTRIBUSI PELANGGAN PER WILAYAH
+# DISTRIBUSI PELANGGAN PER WILAYAH (IMPROVED)
 # ======================
-st.subheader("🗺️ Distribusi Pelanggan Berdasarkan State")
+st.subheader("🗺️ Top 10 Wilayah dengan Jumlah Order Terbanyak")
 
 state_count = (
     df["customer_city"]
     .value_counts()
     .head(10)
-    .reset_index()
+    .sort_values(ascending=True)  # penting untuk horizontal bar
 )
-state_count.columns = ["City", "Jumlah Order"]
 
-fig2, ax2 = plt.subplots(figsize=(8, 4))
-ax2.bar(state_count["City"], state_count["Jumlah Order"])
-ax2.set_xlabel("City")
-ax2.set_ylabel("Jumlah Order")
-ax2.set_title("Top 10 State dengan Jumlah Order Terbanyak")
+fig, ax = plt.subplots(figsize=(10, 5))
 
-st.pyplot(fig2)
+bars = ax.barh(
+    state_count.index,
+    state_count.values
+)
 
+ax.set_xlabel("Jumlah Order")
+ax.set_ylabel("City")
+ax.set_title("Top 10 Wilayah dengan Jumlah Order Terbanyak")
+
+# Tambahkan label angka di ujung bar
+for bar in bars:
+    width = bar.get_width()
+    ax.text(
+        width + (state_count.max() * 0.01),
+        bar.get_y() + bar.get_height() / 2,
+        f"{int(width):,}",
+        va="center"
+    )
+
+plt.tight_layout()
+st.pyplot(fig)
 # ======================
 # INSIGHT SINGKAT
 # ======================
