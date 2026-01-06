@@ -10,5 +10,7 @@ menggunakan dataset Brazilian E-Commerce (Olist).
 - Streamlit
 
 ## Cara Menjalankan Dashboard
-```bash
-streamlit run dashboard/dashboard.py
+Dashboard dapat dijalankan secara lokal menggunakan Streamlit.  
+Dashboard juga telah dideploy dan dapat diakses melalui tautan berikut:
+
+https://submiappn-yza8cjksih96xemv9ftnfd.streamlit.app/
