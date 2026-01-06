@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 # ======================
 # KONFIGURASI HALAMAN
@@ -21,9 +22,6 @@ st.markdown(
 # ======================
 # LOAD DATA
 # ======================
-@st.cache_data
-import os
-
 @st.cache_data
 def load_data():
     base_dir = os.path.dirname(__file__)
