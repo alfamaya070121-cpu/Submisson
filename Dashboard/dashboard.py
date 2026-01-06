@@ -23,7 +23,7 @@ st.markdown(
 # ======================
 @st.cache_data
 def load_data():
-    df = pd.read_csv("dashboard/main_data.csv")
+    df = pd.read_csv("Dashboard/main_data.csv")
     
     # Pastikan kolom tanggal bertipe datetime
     df["order_purchase_timestamp"] = pd.to_datetime(df["order_purchase_timestamp"])
