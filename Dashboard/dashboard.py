@@ -34,8 +34,6 @@ def load_data():
 
 df = load_data()
 
-# --- Prepare 'order_month' column ---
-df["order_purchase_timestamp"] = pd.to_datetime(df["order_purchase_timestamp"])
 df["order_month"] = df["order_purchase_timestamp"].dt.to_period("M").astype(str)
 # ======================
 # PREVIEW DATA
