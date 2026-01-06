@@ -66,16 +66,16 @@ st.pyplot(fig1)
 st.subheader("🗺️ Distribusi Pelanggan Berdasarkan State")
 
 state_count = (
-    df["customer_state"]
+    df["customer_city"]
     .value_counts()
     .head(10)
     .reset_index()
 )
-state_count.columns = ["State", "Jumlah Order"]
+state_count.columns = ["City", "Jumlah Order"]
 
 fig2, ax2 = plt.subplots(figsize=(8, 4))
-ax2.bar(state_count["State"], state_count["Jumlah Order"])
-ax2.set_xlabel("State")
+ax2.bar(state_count["City"], state_count["Jumlah Order"])
+ax2.set_xlabel("City")
 ax2.set_ylabel("Jumlah Order")
 ax2.set_title("Top 10 State dengan Jumlah Order Terbanyak")
 
