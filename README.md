@@ -25,15 +25,15 @@ Hasil analisis divisualisasikan dalam bentuk **dashboard interaktif** menggunaka
 ## 📁 Struktur Proyek
 submission
 ├── dashboard
-│   ├── main_data.csv
-│   └── dashboard.py
-├── data
-│   ├── data_1.csv
-│   └── data_2.csv
-├── notebook.ipynb
-├── README.md
-├── requirements.txt
-└── url.txt
+</p>│   ├── main_data.csv
+</p>│   └── dashboard.py
+</p>├── data
+</p>│   ├── data_1.csv
+</p>│   └── data_2.csv
+</p>├── notebook.ipynb
+</p>├── README.md
+</p>├── requirements.txt
+</p>└── url.txt
 
 ## 🔹 Akses Dashboard Online
 Dashboard juga telah dideploy dan dapat diakses melalui tautan berikut:
