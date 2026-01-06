@@ -32,7 +32,7 @@ st.markdown(
 # ======================
 @st.cache_data
 def load_data():
-    return pd.read_csv("main_data.csv")
+    return pd.read_csv("Dashboard/main_data.csv")
 
 df = load_data()
 
