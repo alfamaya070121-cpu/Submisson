@@ -22,15 +22,15 @@ st.markdown(
 # LOAD DATA
 # ======================
 @st.cache_data
+import os
+
+@st.cache_data
 def load_data():
-    df = pd.read_csv("Dashboard/main_data.csv")
+    base_dir = os.path.dirname(__file__)
+    data_path = os.path.join(base_dir, "main_data.csv")
     
-    # Pastikan kolom tanggal bertipe datetime
-    df["order_purchase_timestamp"] = pd.to_datetime(df["order_purchase_timestamp"])
-    
-    # Buat kolom bulan
-    df["order_month"] = df["order_purchase_timestamp"].dt.to_period("M").astype(str)
-    
+    df = pd.read_csv(data_path)
+
     return df
 
 df = load_data()
